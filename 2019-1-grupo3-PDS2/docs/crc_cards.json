@@ -1,0 +1,99 @@
+[
+  {
+    "name": "User",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "id",
+      "username",
+      "password",
+      "followers",
+      "followees",
+      "tweets",
+      "Efetuar login",
+      "Buscar usuários",
+      "Seguir usuários",
+      "Efetuar logout",
+      "Deletar conta"
+    ],
+    "collaborators": [
+      "Tweet"
+    ]
+  },
+  {
+    "name": "Tweet",
+    "superclasses": "",
+    "subclasses": "Retweet",
+    "type": 1,
+    "responsibilities": [
+      "id",
+      "creator_id",
+      "content",
+      "created_at",
+      "like_count",
+      "hashtags",
+      "Postar tweets",
+      "Buscar tweet",
+      "Curtir tweet",
+      "Responder tweet",
+      "Deletar tweet"
+    ],
+    "collaborators": [
+      "User",
+      "Reply",
+      "Hashtag"
+    ]
+  },
+  {
+    "name": "Retweet",
+    "superclasses": "Tweet",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "id",
+      "original_id",
+      "Tratar remoção de pai"
+    ],
+    "collaborators": [
+      "Tweet",
+      "User",
+      "Reply",
+      "Hashtag"
+    ]
+  },
+  {
+    "name": "Reply",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "id",
+      "creator_id",
+      "in_reply_to",
+      "content",
+      "Criar resposta",
+      "Deletar resposta"
+    ],
+    "collaborators": [
+      "Tweet",
+      "User"
+    ]
+  },
+  {
+    "name": "Hashtag",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "id",
+      "name",
+      "use_count",
+      "Buscar por hashtag",
+      "Mostrar trending"
+    ],
+    "collaborators": [
+      "Tweet"
+    ]
+  }
+]
